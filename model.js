@@ -13,8 +13,8 @@ class AuthorsModel {
     static updateAuthor = async (oldName, newName) => {
         return await pool.query('UPDATE authors SET name = $1 WHERE name = $2', [newName, oldName]);
     }
-    static deleteAuthor = async (name) => {
-        return await pool.query('DELETE FROM authors WHERE name = $1', [name]);
+    static deleteAuthor = async (id) => {
+        return await pool.query('DELETE FROM authors WHERE author_id = $1', [id]);
     }
 }
 
@@ -31,8 +31,8 @@ class BooksModel {
     static updateBook = async (oldName, newName, newGenre, newAuthorId) => {
         return await pool.query('UPDATE books SET name = $1, genre = $2, author_id = $3 WHERE name = $4', [newName, newGenre, newAuthorId, oldName]);
     }
-    static deleteBook = async (name) => {
-        return await pool.query('DELETE FROM books WHERE name = $1', [name]);
+    static deleteBook = async (id) => {
+        return await pool.query('DELETE FROM books WHERE book_id = $1', [id]);
     }
 }
 
@@ -49,8 +49,8 @@ class ReadersModel {
     static updateReader = async (oldName, newName, newPhone, newAddress) => {
         return await pool.query('UPDATE readers SET name = $1, phone = $2, address = $3 WHERE name = $4', [newName, newPhone, newAddress, oldName]);
     }
-    static deleteReader = async (name) => {
-        return await pool.query('DELETE FROM readers WHERE name = $1', [name]);
+    static deleteReader = async (id) => {
+        return await pool.query('DELETE FROM readers WHERE reader_id = $1', [id]);
     }
 }
 

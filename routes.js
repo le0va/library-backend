@@ -12,19 +12,19 @@ router.get('/authors', AuthorsControllers.getAuthors);
 router.get('/authors/:authorName', AuthorsControllers.getAuthor);
 router.post('/authors/:authorName', AuthorsControllers.createAuthor);
 router.put('/authors/:authorOldName', AuthorsControllers.updateAuthor);
-router.delete('/authors/:authorName', AuthorsControllers.deleteAuthor);
+router.delete('/authors/:authorId', AuthorsControllers.deleteAuthor);
 
 router.get('/books', BooksControllers.getBooks);
 router.get('/books/:bookName', BooksControllers.getBook);
 router.post('/books/:bookName', BooksControllers.createBook);
 router.put('/books/:bookOldName', BooksControllers.updateBook);
-router.delete('/books/:bookName', BooksControllers.deleteBook);
+router.delete('/books/:bookId', BooksControllers.deleteBook);
 
 router.get('/readers', ReadersControllers.getReaders);
 router.get('/readers/:readerName', ReadersControllers.getReader);
 router.post('/readers/:readerName', ReadersControllers.createReader);
 router.put('/readers/:readerOldName', ReadersControllers.updateReader);
-router.delete('/readers/:readerName', ReadersControllers.deleteReader);
+router.delete('/readers/:readerId', ReadersControllers.deleteReader);
 
 router.get('/subscriptions', SubscriptionsControllers.getSubscriptions);
 router.get('/subscriptions/:subscriptionId', SubscriptionsControllers.getSubscription);
